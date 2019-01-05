@@ -13,11 +13,12 @@ class ShifterTest < MiniTest::Test
     assert_instance_of Shifter, shifter
   end
 
-  def test_it_can_shift_keys
+  def test_it_can_create_key_a
     shifter = Shifter.new
-    expected = [02, 27, 71, 15]
 
-    assert_equal expected, shifter.shift_keys(02715)
+
+    #why does this not work with an integer as an argument
+    assert_equal 02, shifter.shift_key_a("02715")
   end
 
 
