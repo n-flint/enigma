@@ -24,8 +24,8 @@ class EnigmaTest < MiniTest::Test
     enigma = Enigma.new
 
     actual = enigma.generate_key.is_a? Integer
-    assert_equal 5, enigma.generate_key.length
     assert_equal true, actual
+    assert_equal 5, enigma.generate_key.digits.count
   end
 
 
