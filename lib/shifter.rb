@@ -8,4 +8,7 @@ class Shifter
     key_b = (key[1] + key[2]).to_i
   end
 
+  def shift_key_c(key)
+    key_c = (key[2] + key[3]).to_i
+  end
 end
