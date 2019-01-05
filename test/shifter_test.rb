@@ -31,5 +31,11 @@ class ShifterTest < MiniTest::Test
     assert_equal 71, shifter.shift_key_c("02715")
   end
 
+  def test_it_can_create_key_d
+    shifter = Shifter.new
+
+    assert_equal 15, shifter.shift_key_d("02715")
+  end
+
 
 end
