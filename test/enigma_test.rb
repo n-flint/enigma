@@ -34,7 +34,4 @@ class EnigmaTest < MiniTest::Test
 
     assert_equal expected, enigma.character_set
   end
-
-
-
 end

@@ -19,6 +19,4 @@ class Enigma
     end
     key.join.to_i
   end
-
-
 end
