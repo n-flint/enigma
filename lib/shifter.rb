@@ -8,5 +8,4 @@ class Shifter
     key_b = (key[1] + key[2]).to_i
   end
 
-
 end
