@@ -11,4 +11,8 @@ class Shifter
   def shift_key_c(key)
     key_c = (key[2] + key[3]).to_i
   end
+
+  def shift_key_d(key)
+    key_d = (key[3] + key[4]).to_i
+  end
 end

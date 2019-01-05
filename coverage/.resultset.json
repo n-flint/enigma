@@ -15,6 +15,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/noahflint/turing/1module/projects/enigma/lib/enigma.rb": [
@@ -42,6 +46,6 @@
         null
       ]
     },
-    "timestamp": 1546727810
+    "timestamp": 1546727860
   }
 }
