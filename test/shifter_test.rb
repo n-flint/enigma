@@ -5,6 +5,7 @@ require 'minitest/pride'
 require './lib/shifter'
 require './lib/enigma'
 
+#Am I formating my code correctly according to the 4 phases of testing? Setup, execution, validation, clean up.
 class ShifterTest < MiniTest::Test
 
   def test_it_exists
@@ -35,6 +36,15 @@ class ShifterTest < MiniTest::Test
     shifter = Shifter.new
 
     assert_equal 15, shifter.shift_key_d("02715")
+  end
+
+  def test_it_squares_the_date
+    shifter = Shifter.new
+    enigma = Enigma.new
+    date = enigma.todays_date
+    expected = date.to_i * date.to_i
+
+    assert_equal expected, shifter.date_squared
   end
 
 
