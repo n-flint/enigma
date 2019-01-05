@@ -15,17 +15,24 @@ class EnigmaTest < MiniTest::Test
 
   def test_it_can_get_todays_date
     enigma = Enigma.new
-
     current_date = Date.today.strftime('%d%m%y')
+
     assert_equal current_date, enigma.todays_date
   end
 
   def test_it_can_generate_a_random_key
     enigma = Enigma.new
-
     actual = enigma.generate_key.is_a? Integer
+
     assert_equal true, actual
     assert_equal 5, enigma.generate_key.digits.count
+  end
+
+  def test_it_has_a_set_of_characters
+    enigma = Enigma.new
+    expected = ("a".."z").to_a << " "
+
+    assert_equal expected, enigma.character_set
   end
 
 
