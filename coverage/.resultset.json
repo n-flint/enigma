@@ -2,9 +2,13 @@
   "Unit Tests": {
     "coverage": {
       "/Users/noahflint/turing/1module/projects/enigma/lib/shifter.rb": [
-
+        1,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1546720819
+    "timestamp": 1546720860
   }
 }
