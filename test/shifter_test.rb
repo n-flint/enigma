@@ -37,51 +37,21 @@ class ShifterTest < MiniTest::Test
     assert_equal "4161", shifter.date_last_four
   end
 
-  def test_it_can_create_offset_a
+  def test_it_can_create_offsets
     shifter = Shifter.new
 
     assert_equal 4, shifter.offset_a
-  end
-
-  def test_it_can_create_offset_b
-    shifter = Shifter.new
-
     assert_equal 1, shifter.offset_b
-  end
-
-  def test_it_can_create_offset_c
-    shifter = Shifter.new
-
     assert_equal 6, shifter.offset_c
-  end
-
-  def test_it_can_create_offset_d
-    shifter = Shifter.new
-
     assert_equal 1, shifter.offset_d
   end
 
-  def test_it_can_create_key_a
+  def test_it_can_create_keys
     shifter = Shifter.new
     #why does this not work with an integer as an argument
     assert_equal 02, shifter.key_a("02715")
-  end
-
-  def test_it_can_create_key_b
-    shifter = Shifter.new
-
     assert_equal 27, shifter.key_b("02715")
-  end
-
-  def test_it_can_create_key_c
-    shifter = Shifter.new
-
     assert_equal 71, shifter.key_c("02715")
-  end
-
-  def test_it_can_create_key_d
-    shifter = Shifter.new
-
     assert_equal 15, shifter.key_d("02715")
   end
 
