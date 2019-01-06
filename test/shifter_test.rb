@@ -31,7 +31,13 @@ class ShifterTest < MiniTest::Test
   def test_it_can_find_last_four_of_date_squared
     shifter = Shifter.new
 
-    assert_equal 4161, shifter.date_last_four
+    assert_equal "4161", shifter.date_last_four
+  end
+
+  def test_it_can_create_offset_a
+    shifter = Shifter.new
+
+    assert_equal 4, shifter.offset_a
   end
 
   def test_it_can_create_key_a
