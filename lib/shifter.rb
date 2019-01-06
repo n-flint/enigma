@@ -1,3 +1,4 @@
+require 'date'
 class Shifter
 
   def shift_key_a(key)
@@ -14,5 +15,9 @@ class Shifter
 
   def shift_key_d(key)
     key_d = (key[3] + key[4]).to_i
+  end
+
+  def date_squared
+
   end
 end

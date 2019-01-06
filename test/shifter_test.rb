@@ -14,6 +14,13 @@ class ShifterTest < MiniTest::Test
     assert_instance_of Shifter, shifter
   end
 
+  def test_it_has_todays_date_as_default
+    shifter = Shifter.new
+    current_date = Date.today.strftime('%d%m%y')
+
+    assert_equal current_date, shifter.date
+  end
+  
   def test_it_can_create_key_a
     shifter = Shifter.new
     #why does this not work with an integer as an argument
