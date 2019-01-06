@@ -30,19 +30,19 @@ class Shifter
     date_last_four[3].to_i
   end
 
-  def shift_key_a(key)
+  def key_a(key)
     key_a = (key[0] + key[1]).to_i
   end
 
-  def shift_key_b(key)
+  def key_b(key)
     key_b = (key[1] + key[2]).to_i
   end
 
-  def shift_key_c(key)
+  def key_c(key)
     key_c = (key[2] + key[3]).to_i
   end
 
-  def shift_key_d(key)
+  def key_d(key)
     key_d = (key[3] + key[4]).to_i
   end
 

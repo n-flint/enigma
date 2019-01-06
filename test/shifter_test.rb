@@ -64,25 +64,31 @@ class ShifterTest < MiniTest::Test
   def test_it_can_create_key_a
     shifter = Shifter.new
     #why does this not work with an integer as an argument
-    assert_equal 02, shifter.shift_key_a("02715")
+    assert_equal 02, shifter.key_a("02715")
   end
 
   def test_it_can_create_key_b
     shifter = Shifter.new
 
-    assert_equal 27, shifter.shift_key_b("02715")
+    assert_equal 27, shifter.key_b("02715")
   end
 
   def test_it_can_create_key_c
     shifter = Shifter.new
 
-    assert_equal 71, shifter.shift_key_c("02715")
+    assert_equal 71, shifter.key_c("02715")
   end
 
   def test_it_can_create_key_d
     shifter = Shifter.new
 
-    assert_equal 15, shifter.shift_key_d("02715")
+    assert_equal 15, shifter.key_d("02715")
+  end
+
+  def test_it_can_create_final_shift_a
+    shifter = Shifter.new
+
+    assert_equal 6, shifter.final_shit_a
   end
 
 
