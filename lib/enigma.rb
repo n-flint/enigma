@@ -3,12 +3,9 @@ require 'date'
 class Enigma
   attr_reader :character_set
 
+
   def initialize
     @character_set = ("a".."z").to_a << " "
-  end
-
-  def todays_date
-    Date.today.strftime('%d%m%y')
   end
 
   #this will also generate a key of 00000, is that ok?
@@ -19,6 +16,4 @@ class Enigma
     end
     key.join.to_i
   end
-
-
 end

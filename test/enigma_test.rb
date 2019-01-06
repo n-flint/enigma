@@ -13,13 +13,6 @@ class EnigmaTest < MiniTest::Test
     assert_instance_of Enigma, enigma
   end
 
-  def test_it_can_get_todays_date
-    enigma = Enigma.new
-    current_date = Date.today.strftime('%d%m%y')
-
-    assert_equal current_date, enigma.todays_date
-  end
-
   def test_it_can_generate_a_random_key
     enigma = Enigma.new
     actual = enigma.generate_key.is_a? Integer
@@ -34,7 +27,4 @@ class EnigmaTest < MiniTest::Test
 
     assert_equal expected, enigma.character_set
   end
-
-
-
 end
