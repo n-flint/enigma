@@ -91,5 +91,4 @@ class ShifterTest < MiniTest::Test
     assert_equal 6, shifter.final_shit_a
   end
 
-
 end
