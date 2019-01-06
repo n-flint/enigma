@@ -22,4 +22,16 @@ class EncrypterTest < MiniTest::Test
     assert_equal 77, encrypter.shifter.final_shift_c
     assert_equal 16, encrypter.shifter.final_shift_d
   end
+
+  def test_it_correctly_encrypts_message
+    encrypter = Encrypter.new
+    expected = {
+      :encryption => "keder ohulw",
+      :key => "02715",
+      :date => "040895"
+    }
+    actual = encrypter.encrypt("hello world", "02715", "040895")
+
+    assert_equal expected, actual
+  end
 end
