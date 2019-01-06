@@ -46,6 +46,12 @@ class ShifterTest < MiniTest::Test
     assert_equal 1, shifter.offset_b
   end
 
+  def test_it_can_create_offset_c
+    shifter = Shifter.new
+
+    assert_equal 6, shifter.offset_c
+  end
+
   def test_it_can_create_key_a
     shifter = Shifter.new
     #why does this not work with an integer as an argument
