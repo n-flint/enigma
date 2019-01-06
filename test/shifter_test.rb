@@ -20,7 +20,7 @@ class ShifterTest < MiniTest::Test
 
     assert_equal current_date, shifter.date
   end
-  
+
   def test_it_can_create_key_a
     shifter = Shifter.new
     #why does this not work with an integer as an argument
@@ -45,14 +45,12 @@ class ShifterTest < MiniTest::Test
     assert_equal 15, shifter.shift_key_d("02715")
   end
 
-  def test_it_squares_the_date
-    shifter = Shifter.new
-    enigma = Enigma.new
-    date = enigma.todays_date
-    expected = date.to_i * date.to_i
-
-    assert_equal expected, shifter.date_squared
-  end
-
-
+  # def test_it_squares_the_date
+  #   shifter = Shifter.new
+  #   enigma = Enigma.new
+  #   date = enigma.todays_date
+  #   expected = date.to_i * date.to_i
+  #
+  #   assert_equal expected, shifter.date_squared
+  # end
 end
