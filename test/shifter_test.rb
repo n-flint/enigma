@@ -88,7 +88,7 @@ class ShifterTest < MiniTest::Test
   def test_it_can_create_final_shift_a
     shifter = Shifter.new
 
-    assert_equal 6, shifter.final_shit_a
+    assert_equal 6, shifter.final_shift_a
   end
 
 end

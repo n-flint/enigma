@@ -1,9 +1,11 @@
 require 'date'
 class Shifter
-  attr_reader :date
+  attr_reader :date,
+              :key
 
-  def initialize(date = Date.today.strftime('%d%m%y'))
+  def initialize(date = Date.today.strftime('%d%m%y'), key = ("02715"))
     @date = date
+    @key = key
   end
 
   def date_squared
@@ -44,6 +46,10 @@ class Shifter
 
   def key_d(key)
     key_d = (key[3] + key[4]).to_i
+  end
+
+  def final_shift_a
+    offset_a + key_a(key)
   end
 
 end
