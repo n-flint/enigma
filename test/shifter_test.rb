@@ -28,6 +28,12 @@ class ShifterTest < MiniTest::Test
     assert_equal 2511914161, shifter.date_squared
   end
 
+  def test_it_can_find_last_four_of_date_squared
+    shifter = Shifter.new
+
+    assert_equal 4161, shifter.date_last_four
+  end
+
   def test_it_can_create_key_a
     shifter = Shifter.new
     #why does this not work with an integer as an argument
