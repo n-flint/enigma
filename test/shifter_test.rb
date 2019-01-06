@@ -85,10 +85,11 @@ class ShifterTest < MiniTest::Test
     assert_equal 15, shifter.key_d("02715")
   end
 
-  def test_it_can_create_final_shift_a
+  def test_it_can_create_final_shifts
     shifter = Shifter.new
 
     assert_equal 6, shifter.final_shift_a
+    assert_equal 28, shifter.final_shift_b
   end
 
 end
