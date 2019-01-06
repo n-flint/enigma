@@ -56,4 +56,8 @@ class Shifter
     offset_b + key_b(key)
   end
 
+  def final_shift_c
+    offset_c + key_c(key)
+  end
+
 end
