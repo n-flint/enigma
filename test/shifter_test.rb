@@ -64,4 +64,11 @@ class ShifterTest < MiniTest::Test
     assert_equal 16, shifter.final_shift_d
   end
 
+  def test_it_can_get_array_of_final_shifts
+    shifter = Shifter.new
+
+    assert_equal [6, 28, 77, 16], shifter.final_shifts
+
+  end
+
 end

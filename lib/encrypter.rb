@@ -8,5 +8,10 @@ class Encrypter
     @shifter = Shifter.new
   end
 
+  # def encrypt(message, key, date)
+  #   shifts =
+  #
+  # end
+
 
 end
