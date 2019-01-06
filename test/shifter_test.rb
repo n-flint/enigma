@@ -24,9 +24,8 @@ class ShifterTest < MiniTest::Test
   #is it ok to have instance variables in a test like this?
   def test_it_squares_the_date
     shifter = Shifter.new
-    expected = @date.to_i * @date.to_i
 
-    assert_equal expected, shifter.date_squared
+    assert_equal 2511914161, shifter.date_squared
   end
 
   def test_it_can_create_key_a

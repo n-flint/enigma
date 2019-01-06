@@ -22,7 +22,7 @@ class Shifter
     key_d = (key[3] + key[4]).to_i
   end
 
-  # def date_squared
-  #
-  # end
+  def date_squared
+    @date.to_i * @date.to_i
+  end
 end
