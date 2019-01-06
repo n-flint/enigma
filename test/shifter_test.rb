@@ -6,6 +6,9 @@ require './lib/shifter'
 require './lib/enigma'
 
 #Am I formating my code correctly according to the 4 phases of testing? Setup, execution, validation, clean up.
+
+#maybe put shifter.new and todays date in the test helper?
+
 class ShifterTest < MiniTest::Test
 
   def test_it_exists
@@ -50,6 +53,12 @@ class ShifterTest < MiniTest::Test
     shifter = Shifter.new
 
     assert_equal 6, shifter.offset_c
+  end
+
+  def test_it_can_create_offset_d
+    shifter = Shifter.new
+
+    assert_equal 1, shifter.offset_d
   end
 
   def test_it_can_create_key_a
