@@ -6,6 +6,18 @@ class Shifter
     @date = date
   end
 
+  def date_squared
+    @date.to_i * @date.to_i
+  end
+
+  def date_last_four
+    date_squared.to_s[-4..-1]
+  end
+
+  def offset_a
+    date_last_four[0].to_i
+  end
+
   def shift_key_a(key)
     key_a = (key[0] + key[1]).to_i
   end
@@ -22,11 +34,4 @@ class Shifter
     key_d = (key[3] + key[4]).to_i
   end
 
-  def date_squared
-    @date.to_i * @date.to_i
-  end
-
-  def date_last_four
-    date_squared.to_s[-4..-1]
-  end
 end
