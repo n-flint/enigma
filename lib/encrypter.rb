@@ -8,10 +8,11 @@ class Encrypter
     @shifter = Shifter.new
   end
 
-  # def encrypt(message, key, date)
-  #   shifts =
-  #
-  # end
+  def encrypt(message, key, date)
+  require "pry"
+  binding.pry
+
+  end
 
 
 end

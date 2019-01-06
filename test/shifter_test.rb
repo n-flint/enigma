@@ -37,6 +37,14 @@ class ShifterTest < MiniTest::Test
     assert_equal "4161", shifter.date_last_four
   end
 
+  def test_it_can_generate_a_random_key
+    shifter = Shifter.new
+    actual = shifter.generate_key.is_a? Integer
+
+    assert_equal true, actual
+    assert_equal 5, shifter.generate_key.digits.count
+  end
+
   def test_it_can_create_offsets
     shifter = Shifter.new
 
@@ -68,7 +76,6 @@ class ShifterTest < MiniTest::Test
     shifter = Shifter.new
 
     assert_equal [6, 28, 77, 16], shifter.final_shifts
-
   end
 
 end
