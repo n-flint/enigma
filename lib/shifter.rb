@@ -18,6 +18,10 @@ class Shifter
     date_last_four[0].to_i
   end
 
+  def offset_b
+    date_last_four[1].to_i
+  end
+
   def shift_key_a(key)
     key_a = (key[0] + key[1]).to_i
   end
