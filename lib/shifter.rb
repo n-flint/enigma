@@ -64,4 +64,8 @@ class Shifter
     offset_d + key_d(key)
   end
 
+  def final_shifts
+    [final_shift_a, final_shift_b, final_shift_c, final_shift_d]
+  end
+
 end
