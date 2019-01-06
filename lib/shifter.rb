@@ -25,4 +25,9 @@ class Shifter
   def date_squared
     @date.to_i * @date.to_i
   end
+
+  #better way than changing to a string, then back to an integer?
+  def date_last_four
+    date_squared.to_s[-4..-1].to_i
+  end
 end
