@@ -25,14 +25,20 @@ class EncrypterTest < MiniTest::Test
   def test_it_can_get_final_shifts
     encrypter = Encrypter.new
 
-    assert_equal 6, encrypter.shifter.final_shift_a
-    assert_equal 28, encrypter.shifter.final_shift_b
-    assert_equal 77, encrypter.shifter.final_shift_c
-    assert_equal 16, encrypter.shifter.final_shift_d
+    assert_equal [3, 27, 73, 20], encrypter.shift_values
   end
 
+  # def test_it_can_get_final_shifts
+  #   encrypter = Encrypter.new
+  #
+  #   assert_equal 6, encrypter.shifter.final_shift_a
+  #   assert_equal 28, encrypter.shifter.final_shift_b
+  #   assert_equal 77, encrypter.shifter.final_shift_c
+  #   assert_equal 16, encrypter.shifter.final_shift_d
+  # end
+
   def test_it_correctly_encrypts_message
-    skip
+    #skip
     encrypter = Encrypter.new
     expected = {
       :encryption => "keder ohulw",
