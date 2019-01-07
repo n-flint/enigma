@@ -1,4 +1,5 @@
 require './lib/shifter'
+require './lib/enigma'
 
 
 class Encrypter
@@ -9,8 +10,8 @@ class Encrypter
   end
 
   def encrypt(message, key, date)
-  require "pry"
-  binding.pry
+    letters = message.downcase.chars
+
 
   end
 

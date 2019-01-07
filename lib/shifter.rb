@@ -17,6 +17,7 @@ class Shifter
   end
 
   #this will also generate a key of 00000, is that ok?
+  #also generates a 4 digit key, need to pad with 0's
   def generate_key
     key = []
     5.times do
