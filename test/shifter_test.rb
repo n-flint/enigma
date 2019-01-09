@@ -2,12 +2,8 @@ require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/shifter'
 require './lib/enigma'
-
-#Am I formating my code correctly according to the 4 phases of testing? Setup, execution, validation, clean up.
-
-#maybe put shifter.new and todays date in the test helper?
+require './lib/shifter'
 
 class ShifterTest < MiniTest::Test
 
@@ -17,65 +13,68 @@ class ShifterTest < MiniTest::Test
     assert_instance_of Shifter, shifter
   end
 
-  def test_it_has_todays_date_as_default
-    shifter = Shifter.new
-    current_date = Date.today.strftime('%d%m%y')
-
-    assert_equal current_date, shifter.date
-  end
-
-  #is it ok to have instance variables in a test like this?
-  def test_it_squares_the_date
-    shifter = Shifter.new
-
-    assert_equal 4916674161, shifter.date_squared
-  end
-
-  def test_it_can_find_last_four_of_date_squared
-    shifter = Shifter.new
-
-    assert_equal "4161", shifter.date_last_four
-  end
-
   def test_it_can_generate_a_random_key
     shifter = Shifter.new
     actual = shifter.generate_key.is_a? Integer
 
     assert_equal true, actual
-    assert_equal 5, shifter.generate_key.digits.count
   end
 
-  def test_it_can_create_offsets
+  def test_it_returns_five_digits_with_pad_key
     shifter = Shifter.new
 
-    assert_equal 4, shifter.offset_a
-    assert_equal 1, shifter.offset_b
-    assert_equal 6, shifter.offset_c
-    assert_equal 1, shifter.offset_d
+    assert_equal 5, shifter.pad_key.length
   end
 
-  def test_it_can_create_keys
+  def test_it_can_generate_key_pairs
     shifter = Shifter.new
-    #why does this not work with an integer as an argument
-    assert_equal 02, shifter.key_a("02715")
-    assert_equal 27, shifter.key_b("02715")
-    assert_equal 71, shifter.key_c("02715")
-    assert_equal 15, shifter.key_d("02715")
+    shifter.pad_key
+
+    assert_equal 5, shifter.key_pairs("02715").count
   end
 
-  def test_it_can_create_final_shifts
+  def test_it_can_combine_key_pairs
     shifter = Shifter.new
+    shifter.key_pairs("02715")
 
-    assert_equal 6, shifter.final_shift_a
-    assert_equal 28, shifter.final_shift_b
-    assert_equal 77, shifter.final_shift_c
-    assert_equal 16, shifter.final_shift_d
+    assert_equal 4, shifter.combine_pairs("02715").count
   end
 
-  def test_it_can_get_array_of_final_shifts
+  def test_it_can_find_todays_date
     shifter = Shifter.new
 
-    assert_equal [6, 28, 77, 16], shifter.final_shifts
+    assert_equal 90119, shifter.todays_date
   end
+
+
+  def test_it_squares_the_date
+    shifter = Shifter.new
+
+    assert_equal 1672401025, shifter.date_squared("040895")
+  end
+
+  def test_it_can_find_last_four_of_date_squared
+    shifter = Shifter.new
+
+    assert_equal [1, 0, 2, 5], shifter.date_last_four("040895")
+  end
+
+  def test_it_can_generate_offsets
+    shifter = Shifter.new
+
+    assert_equal 1, shifter.offset_a("02715", "040895")
+    assert_equal 0, shifter.offset_b("02715", "040895")
+    assert_equal 2, shifter.offset_c("02715", "040895")
+    assert_equal 5, shifter.offset_d("02715", "040895")
+  end
+
+  def test_it_can_find_final_shifts
+    shifter = Shifter.new
+    expected = [3, 27, 73, 20]
+    shifter.final_shifts("02715", "040895")
+
+    assert_equal expected, shifter.shifts
+  end
+
 
 end
