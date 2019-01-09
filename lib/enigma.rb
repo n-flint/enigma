@@ -42,7 +42,22 @@ class Enigma
     date_squared.to_s[-4..-1].split(//).map do |num|
       num.to_i
     end
+  end
 
+  def offset_a
+    date_last_four[0].to_i
+  end
+
+  def offset_b
+    date_last_four[1].to_i
+  end
+
+  def offset_c
+    date_last_four[2].to_i
+  end
+
+  def offset_d
+    date_last_four[3].to_i
   end
 
 end
