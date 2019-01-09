@@ -58,27 +58,27 @@ class EnigmaTest < MiniTest::Test
   #
   #   assert_equal 90119, enigma.todays_date
   # end
-  # 
+  #
   # def test_it_squares_the_date
   #   enigma = Enigma.new
   #
   #   assert_equal 1672401025, enigma.date_squared("040895")
   # end
 
-  def test_it_can_find_last_four_of_date_squared
-    enigma = Enigma.new
+  # def test_it_can_find_last_four_of_date_squared
+  #   enigma = Enigma.new
+  #
+  #   assert_equal [1, 0, 2, 5], enigma.date_last_four("040895")
+  # end
 
-    assert_equal [1, 0, 2, 5], enigma.date_last_four("040895")
-  end
-
-  def test_it_can_generate_offsets
-    enigma = Enigma.new
-
-    assert_equal 1, enigma.offset_a("02715", "040895")
-    assert_equal 0, enigma.offset_b("02715", "040895")
-    assert_equal 2, enigma.offset_c("02715", "040895")
-    assert_equal 5, enigma.offset_d("02715", "040895")
-  end
+  # def test_it_can_generate_offsets
+  #   enigma = Enigma.new
+  #
+  #   assert_equal 1, enigma.offset_a("02715", "040895")
+  #   assert_equal 0, enigma.offset_b("02715", "040895")
+  #   assert_equal 2, enigma.offset_c("02715", "040895")
+  #   assert_equal 5, enigma.offset_d("02715", "040895")
+  # end
 
   #testing the value of the shifts?
   def test_it_can_find_final_shifts
