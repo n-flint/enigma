@@ -19,6 +19,13 @@ class OffsetsTest < MiniTest::Test
     assert_equal 90119, offsets.todays_date
   end
 
+  def test_it_squares_the_date
+    offsets = Offsets.new
+
+    assert_equal 1672401025, offsets.date_squared("040895")
+  end
+
+
   # def test_it_can_generate_offsets
   #   offsets = Offsets.new
   #
