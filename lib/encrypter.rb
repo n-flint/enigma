@@ -16,8 +16,6 @@ class Encrypter
     # require "pry"
     # binding.pry
     letters = message.downcase.chars
-
-
   end
 
 

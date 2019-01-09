@@ -3,17 +3,46 @@ require 'date'
 class Enigma
   attr_reader :character_set
 
-
   def initialize
     @character_set = ("a".."z").to_a << " "
   end
 
-  # #this will also generate a key of 00000, is that ok?
-  # def generate_key
-  #   key = []
-  #   5.times do
-  #     key << rand(0..9)
-  #   end
-  #   key.join.to_i
-  # end
+  def generate_key
+    key = []
+    5.times do
+      key << rand(0..9)
+    end
+    key.join.to_i
+  end
+
+  def pad_key
+    generate_key.to_s.rjust(5, "0")
+  end
+
+  def key_pairs
+    pad_key.split(//).map do |key|
+      key.to_i
+    end
+  end
+
+  def combine_pairs
+    key_pairs.each_cons(2).to_a
+
+  end
+
+  def todays_date
+    Date.today.strftime('%d%m%y').to_i
+  end
+
+  def date_squared
+    todays_date * todays_date
+  end
+
+  def date_last_four
+    date_squared.to_s[-4..-1].split(//).map do |num|
+      num.to_i
+    end
+
+  end
+
 end
