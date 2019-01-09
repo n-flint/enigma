@@ -13,12 +13,12 @@ class EnigmaTest < MiniTest::Test
     assert_instance_of Enigma, enigma
   end
 
-  def test_it_can_generate_a_random_key
-    enigma = Enigma.new
-    actual = enigma.generate_key.is_a? Integer
-
-    assert_equal true, actual
-  end
+  # def test_it_can_generate_a_random_key
+  #   enigma = Enigma.new
+  #   actual = enigma.generate_key.is_a? Integer
+  #
+  #   assert_equal true, actual
+  # end
 
   def test_it_has_a_set_of_characters
     enigma = Enigma.new

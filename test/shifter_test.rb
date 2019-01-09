@@ -13,6 +13,13 @@ class ShifterTest < MiniTest::Test
     assert_instance_of Shifter, shifter
   end
 
+  def test_it_can_generate_a_random_key
+    shifter = Shifter.new
+    actual = shifter.generate_key.is_a? Integer
+
+    assert_equal true, actual
+  end
+
 
 
 end
