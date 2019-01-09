@@ -28,13 +28,21 @@ class ShifterTest < MiniTest::Test
   def test_it_squares_the_date
     shifter = Shifter.new
 
-    assert_equal 2511914161, shifter.date_squared
+    assert_equal 4916674161, shifter.date_squared
   end
 
   def test_it_can_find_last_four_of_date_squared
     shifter = Shifter.new
 
     assert_equal "4161", shifter.date_last_four
+  end
+
+  def test_it_can_generate_a_random_key
+    shifter = Shifter.new
+    actual = shifter.generate_key.is_a? Integer
+
+    assert_equal true, actual
+    assert_equal 5, shifter.generate_key.digits.count
   end
 
   def test_it_can_create_offsets
@@ -62,6 +70,12 @@ class ShifterTest < MiniTest::Test
     assert_equal 28, shifter.final_shift_b
     assert_equal 77, shifter.final_shift_c
     assert_equal 16, shifter.final_shift_d
+  end
+
+  def test_it_can_get_array_of_final_shifts
+    shifter = Shifter.new
+
+    assert_equal [6, 28, 77, 16], shifter.final_shifts
   end
 
 end

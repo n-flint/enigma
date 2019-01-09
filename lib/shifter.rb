@@ -16,6 +16,16 @@ class Shifter
     date_squared.to_s[-4..-1]
   end
 
+  #this will also generate a key of 00000, is that ok?
+  #also generates a 4 digit key, need to pad with 0's
+  def generate_key
+    key = []
+    5.times do
+      key << rand(0..9)
+    end
+    key.join.to_i
+  end
+
   def offset_a
     date_last_four[0].to_i
   end
@@ -62,6 +72,10 @@ class Shifter
 
   def final_shift_d
     offset_d + key_d(key)
+  end
+
+  def final_shifts
+    [final_shift_a, final_shift_b, final_shift_c, final_shift_d]
   end
 
 end
