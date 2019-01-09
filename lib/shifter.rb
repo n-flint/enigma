@@ -1,6 +1,3 @@
-# require './lib/enigma'
-
-# class Shifter < Enigma
 module Shifter
 
   def final_shift_a(key, date)
@@ -21,11 +18,5 @@ module Shifter
 
   def final_shifts(key, date)
     @shifts = [final_shift_a(key, date), final_shift_b(key, date), final_shift_c(key, date), final_shift_d(key, date)]
-    # @shifts
   end
-
-
-
-
-
 end

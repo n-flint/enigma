@@ -19,6 +19,8 @@ class Enigma
     @shifts = []
     @keys = Keys.new
     @offsets = Offsets.new
+
+    # @encrypter = Encrypter.new
     # @encrypter = Encrypter.new
   end
 
