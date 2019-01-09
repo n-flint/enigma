@@ -13,4 +13,10 @@ class KeysTest < MiniTest::Test
     assert_instance_of Keys, keys
   end
 
+  def test_it_can_generate_a_random_key
+    keys = Keys.new
+    actual = keys.generate_key.is_a? Integer
+
+    assert_equal true, actual
+  end
 end

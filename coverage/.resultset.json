@@ -179,44 +179,15 @@
         null,
         null
       ],
-      "/Users/noahflint/turing/1module/projects/enigma/lib/offsets.rb": [
-        null,
+      "/Users/noahflint/turing/1module/projects/enigma/lib/keys.rb": [
         1,
         null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        6,
-        null,
-        null,
-        1,
-        5,
-        20,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
         null,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1547058873
+    "timestamp": 1547059122
   }
 }
