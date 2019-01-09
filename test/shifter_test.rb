@@ -40,33 +40,33 @@ class ShifterTest < MiniTest::Test
     assert_equal 4, shifter.combine_pairs("02715").count
   end
 
-  def test_it_can_find_todays_date
-    shifter = Shifter.new
+  # def test_it_can_find_todays_date
+  #   shifter = Shifter.new
+  #
+  #   assert_equal 90119, shifter.todays_date
+  # end
 
-    assert_equal 90119, shifter.todays_date
-  end
 
+  # def test_it_squares_the_date
+  #   shifter = Shifter.new
+  #
+  #   assert_equal 1672401025, shifter.date_squared("040895")
+  # end
 
-  def test_it_squares_the_date
-    shifter = Shifter.new
+  # def test_it_can_find_last_four_of_date_squared
+  #   shifter = Shifter.new
+  #
+  #   assert_equal [1, 0, 2, 5], shifter.date_last_four("040895")
+  # end
 
-    assert_equal 1672401025, shifter.date_squared("040895")
-  end
-
-  def test_it_can_find_last_four_of_date_squared
-    shifter = Shifter.new
-
-    assert_equal [1, 0, 2, 5], shifter.date_last_four("040895")
-  end
-
-  def test_it_can_generate_offsets
-    shifter = Shifter.new
-
-    assert_equal 1, shifter.offset_a("02715", "040895")
-    assert_equal 0, shifter.offset_b("02715", "040895")
-    assert_equal 2, shifter.offset_c("02715", "040895")
-    assert_equal 5, shifter.offset_d("02715", "040895")
-  end
+  # def test_it_can_generate_offsets
+  #   shifter = Shifter.new
+  #
+  #   assert_equal 1, shifter.offset_a("02715", "040895")
+  #   assert_equal 0, shifter.offset_b("02715", "040895")
+  #   assert_equal 2, shifter.offset_c("02715", "040895")
+  #   assert_equal 5, shifter.offset_d("02715", "040895")
+  # end
 
   def test_it_can_find_final_shifts
     shifter = Shifter.new
