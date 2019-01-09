@@ -19,4 +19,10 @@ class KeysTest < MiniTest::Test
 
     assert_equal true, actual
   end
+
+  def test_it_returns_five_digits_with_pad_key
+    keys = Keys.new
+
+    assert_equal 5, keys.pad_key.length
+  end
 end
