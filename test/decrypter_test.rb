@@ -20,6 +20,12 @@ class DecrypterTest < MiniTest::Test
     assert_equal "h", decrypter.rotate_letter_decrypt("k", "02715", "040895")
   end
 
+  def test_it_decrypts_messages
+    decrypter = Decrypter.new
+
+    expected = "hello"
+    assert_equal expected, decrypter.decrypt_message("keder", "02715", "040895")
+  end
 
 
 
