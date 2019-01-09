@@ -101,6 +101,12 @@ class EnigmaTest < MiniTest::Test
     assert_equal expected, enigma.split_message("hello", "02715", "040895")
   end
 
+  def test_it_can_rotate_shifts
+    enigma = Enigma.new
+
+    assert_equal [27, 73, 20, 3], enigma.rotate_shifts
+  end
+
   def test_it_encrypts_messages
     enigma = Enigma.new
 

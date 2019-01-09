@@ -84,21 +84,20 @@ class Enigma
   end
 
   def rotate_letter(letter, key, date)
-    @shifts = final_shifts(key, date)
-    final_index = @shifts[0] + @character_set.index(letter)
-
-    @character_set.rotate(final_index).first
-    # rotate_shifts(key, date)
-
-    # @shifts.rotate!(1)
-
+    counter = 0
+    require "pry"
+    binding.pry
+    if counter < 4
+      shifts = final_shifts(key, date)
+      final_index = shifts[counter] + @character_set.index(letter)
+      counter += 1
+      letter = @character_set.rotate(final_index).first
+      # shifts.rotate(1)
+    else
+      counter = 0
+    end
+    letter
   end
-
-  # def rotate_shifts(key, date)
-  #   @shifts = final_shifts(key, date).rotate!(1)
-  #   # require "pry"
-  #   # binding.pry
-  # end
 
   def split_message(message, key, date)
     message.split(//)
@@ -108,10 +107,6 @@ class Enigma
     split_message(message, key, date).map do |letter|
 
       rotate_letter(letter, key, date)
-      # rotate_shifts(key, date)
-      # @shifts.rotate!(1)
-
-
     end.join
   end
 
