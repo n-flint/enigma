@@ -9,6 +9,13 @@ class Offsets
     date.to_i * date.to_i
   end
 
+  def date_last_four(date)
+    date_squared(date).to_s[-4..-1].split(//).map do |num|
+      num.to_i
+    end
+  end
+
+
   # def offset_a(key, date)
   #   date_last_four(date)[0].to_i
   # end
