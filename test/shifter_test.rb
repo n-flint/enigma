@@ -65,13 +65,6 @@ class ShifterTest < MiniTest::Test
     assert_equal expected, actual
   end
 
-  def test_it_can_rotate_a_letter_encrypt
-    enigma = Enigma.new
-    enigma.final_shifts("02715", "040895")
-
-    assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
-  end
-
   def test_it_can_find_todays_date
     offsets = Offsets.new
 
@@ -85,5 +78,13 @@ class ShifterTest < MiniTest::Test
 
     assert_equal "h", enigma.rotate_letter_decrypt("k", "02715", "040895")
     assert_equal "!", enigma.rotate_letter_decrypt("!", "02715", "040895")
+  end
+
+  def test_it_can_rotate_a_letter_encrypt
+    enigma = Enigma.new
+    enigma.final_shifts("02715", "040895")
+
+    assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
+    assert_equal "!", enigma.rotate_letter_encrypt("!", "02715", "040895")
   end
 end
