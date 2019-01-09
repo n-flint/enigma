@@ -59,14 +59,14 @@ class ShifterTest < MiniTest::Test
     assert_equal [1, 0, 2, 5], shifter.date_last_four("040895")
   end
 
-  def test_it_can_generate_offsets
-    shifter = Shifter.new
-
-    assert_equal 1, shifter.offset_a("02715", "040895")
-    assert_equal 0, shifter.offset_b("02715", "040895")
-    assert_equal 2, shifter.offset_c("02715", "040895")
-    assert_equal 5, shifter.offset_d("02715", "040895")
-  end
+  # def test_it_can_generate_offsets
+  #   shifter = Shifter.new
+  #
+  #   assert_equal 1, shifter.offset_a("02715", "040895")
+  #   assert_equal 0, shifter.offset_b("02715", "040895")
+  #   assert_equal 2, shifter.offset_c("02715", "040895")
+  #   assert_equal 5, shifter.offset_d("02715", "040895")
+  # end
 
   def test_it_can_find_final_shifts
     shifter = Shifter.new

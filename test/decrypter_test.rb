@@ -26,7 +26,4 @@ class DecrypterTest < MiniTest::Test
     expected = "hello"
     assert_equal expected, decrypter.decrypt_message("keder", "02715", "040895")
   end
-
-
-
 end
