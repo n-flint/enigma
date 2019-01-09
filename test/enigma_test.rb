@@ -96,12 +96,12 @@ class EnigmaTest < MiniTest::Test
   #   assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
   # end
 
-  def test_it_can_rotate_a_letter_decrypt
-    enigma = Enigma.new
-    enigma.final_shifts("02715", "040895")
-
-    assert_equal "h", enigma.rotate_letter_decrypt("k", "02715", "040895")
-  end
+  # def test_it_can_rotate_a_letter_decrypt
+  #   enigma = Enigma.new
+  #   enigma.final_shifts("02715", "040895")
+  #
+  #   assert_equal "h", enigma.rotate_letter_decrypt("k", "02715", "040895")
+  # end
 
   def test_it_can_split_up_message
     enigma = Enigma.new
