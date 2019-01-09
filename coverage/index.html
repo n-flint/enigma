@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:12:24-07:00">2019-01-09T10:12:24-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:13:27-07:00">2019-01-09T10:13:27-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.09
+         3.03
        </span>
     </span> hits/line)
   </h2>
@@ -52,20 +52,20 @@
       
       <tr>
         <td class="strong"><a href="#39137df52fc19d77888655c9a851d8397e99808e" class="src_link" title="lib/decrypter.rb">lib/decrypter.rb</a></td>
-        <td class="red strong">77.78 %</td>
-        <td>18</td>
-        <td>9</td>
-        <td>7</td>
+        <td class="yellow strong">84.62 %</td>
+        <td>25</td>
+        <td>13</td>
+        <td>11</td>
         <td>2</td>
-        <td>3.0</td>
+        <td>2.7</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1dcb65471431823de692461af2b9fffbef97b6cd" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
-        <td class="red strong">72.73 %</td>
+        <td class="red strong">70.97 %</td>
         <td>143</td>
-        <td>66</td>
-        <td>48</td>
+        <td>62</td>
+        <td>44</td>
         <td>18</td>
         <td>3.1</td>
       </tr>
@@ -89,10 +89,10 @@
         <div class="source_table" id="39137df52fc19d77888655c9a851d8397e99808e">
   <div class="header">
     <h3>lib/decrypter.rb</h3>
-    <h4><span class="red">77.78 %</span> covered</h4>
+    <h4><span class="yellow">84.62 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>13</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -196,13 +196,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def decrypt_message(message, key, date)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    final_shifts(key, date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    split_message(message, key, date).map do |letter|</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="20">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      rotate_letter_decrypt(letter, key, date)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    end.join</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
@@ -216,10 +258,10 @@
         <div class="source_table" id="1dcb65471431823de692461af2b9fffbef97b6cd">
   <div class="header">
     <h3>lib/enigma.rb</h3>
-    <h4><span class="red">72.73 %</span> covered</h4>
+    <h4><span class="red">70.97 %</span> covered</h4>
     <div>
-      <b>66</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
+      <b>62</b> relevant lines. 
+      <span class="green"><b>44</b> lines covered</span> and
       <span class="red"><b>18</b> lines missed.</span>
     </div>
   </div>
@@ -935,40 +977,40 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="119">
           
-          <code class="ruby">  def decrypt_message(message, key, date)</code>
+          
+          <code class="ruby">  # def decrypt_message(message, key, date)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="120">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="120">
           
-          <code class="ruby">    final_shifts(key, date)</code>
+          
+          <code class="ruby">  #   final_shifts(key, date)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="121">
           
           
-          <code class="ruby">    split_message(message, key, date).map do |letter|</code>
+          <code class="ruby">  #   split_message(message, key, date).map do |letter|</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="122">
-          <span class="hits">5</span>
+        <li class="never" data-hits="" data-linenumber="122">
           
-          <code class="ruby">      rotate_letter_decrypt(letter, key, date)</code>
+          
+          <code class="ruby">  #     rotate_letter_decrypt(letter, key, date)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="123">
           
-          <code class="ruby">    end.join</code>
+          
+          <code class="ruby">  #   end.join</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="125">

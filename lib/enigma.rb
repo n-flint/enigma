@@ -116,12 +116,12 @@ class Enigma
   #   end.join
   # end
 
-  def decrypt_message(message, key, date)
-    final_shifts(key, date)
-    split_message(message, key, date).map do |letter|
-      rotate_letter_decrypt(letter, key, date)
-    end.join
-  end
+  # def decrypt_message(message, key, date)
+  #   final_shifts(key, date)
+  #   split_message(message, key, date).map do |letter|
+  #     rotate_letter_decrypt(letter, key, date)
+  #   end.join
+  # end
 
   def encrypt(message, key = pad_key, date = todays_date)
     final = Hash.new

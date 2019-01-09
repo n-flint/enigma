@@ -14,5 +14,10 @@ class Decrypter < Enigma
     end
   end
 
-
+  def decrypt_message(message, key, date)
+    final_shifts(key, date)
+    split_message(message, key, date).map do |letter|
+      rotate_letter_decrypt(letter, key, date)
+    end.join
+  end
 end
