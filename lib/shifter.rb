@@ -1,6 +1,7 @@
-require './lib/enigma'
+# require './lib/enigma'
 
-class Shifter < Enigma
+# class Shifter < Enigma
+module Shifter
 
   def generate_key
     key = []

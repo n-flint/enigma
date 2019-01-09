@@ -1,9 +1,9 @@
 require './lib/enigma'
 
-class Encrypter < Enigma
+# class Encrypter < Enigma
+module Encrypter
 
   def rotate_letter_encrypt(letter, key, date)
-
       final_index = @shifts[0] + @character_set.index(letter)
       @shifts.rotate!(1)
       letter = @character_set.rotate(final_index).first
@@ -15,7 +15,4 @@ class Encrypter < Enigma
       rotate_letter_encrypt(letter, key, date)
     end.join
   end
-
-
-
 end
