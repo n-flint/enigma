@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T09:56:05-07:00">2019-01-09T09:56:05-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:12:24-07:00">2019-01-09T10:12:24-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">67.47%</span></span>
+    (<span class="covered_percent"><span class="red">73.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.72
+         3.09
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>83</b> relevant lines. 
-    <span class="green"><b>56</b> lines covered</span> and
-    <span class="red"><b>27</b> lines missed </span>
+    <b>75</b> relevant lines. 
+    <span class="green"><b>55</b> lines covered</span> and
+    <span class="red"><b>20</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,23 +51,23 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#9691005e4cb6e583e8fa848abb1db48210242cc1" class="src_link" title="lib/encrypter.rb">lib/encrypter.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>21</td>
-        <td>10</td>
-        <td>10</td>
-        <td>0</td>
-        <td>2.9</td>
+        <td class="strong"><a href="#39137df52fc19d77888655c9a851d8397e99808e" class="src_link" title="lib/decrypter.rb">lib/decrypter.rb</a></td>
+        <td class="red strong">77.78 %</td>
+        <td>18</td>
+        <td>9</td>
+        <td>7</td>
+        <td>2</td>
+        <td>3.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1dcb65471431823de692461af2b9fffbef97b6cd" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
-        <td class="red strong">63.01 %</td>
+        <td class="red strong">72.73 %</td>
         <td>143</td>
-        <td>73</td>
-        <td>46</td>
-        <td>27</td>
-        <td>2.7</td>
+        <td>66</td>
+        <td>48</td>
+        <td>18</td>
+        <td>3.1</td>
       </tr>
       
     </tbody>
@@ -86,14 +86,14 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="9691005e4cb6e583e8fa848abb1db48210242cc1">
+        <div class="source_table" id="39137df52fc19d77888655c9a851d8397e99808e">
   <div class="header">
-    <h3>lib/encrypter.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h3>lib/decrypter.rb</h3>
+    <h4><span class="red">77.78 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -115,7 +115,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">class Encrypter &lt; Enigma</code>
+          <code class="ruby">class Decrypter &lt; Enigma</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -127,100 +127,82 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def rotate_letter_encrypt(letter, key, date)</code>
+          <code class="ruby">  def rotate_letter_decrypt(letter, key, date)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    if @character_set.include?(letter)</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="7">
           <span class="hits">6</span>
           
-          <code class="ruby">      final_index = @shifts[0] + @character_set.index(letter)</code>
+          <code class="ruby">      final_index =  @character_set.index(letter) - @shifts[0]</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="8">
-          <span class="hits">6</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">      @shifts.rotate!(1)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="9">
           <span class="hits">6</span>
           
-          <code class="ruby">      letter = @character_set.rotate(final_index).first</code>
+          <code class="ruby">      @shifts.rotate!(1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      letter = @character_set.rotate(final_index).first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="12">
           
-          <code class="ruby">  def encrypt_message(message, key, date)</code>
+          
+          <code class="ruby">      @shifts.rotate!(1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
           
-          <code class="ruby">    final_shifts(key, date)</code>
+          
+          <code class="ruby">      letter</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    split_message(message, key, date).map do |letter|</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="15">
-          <span class="hits">5</span>
-          
-          <code class="ruby">      rotate_letter_encrypt(letter, key, date)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    end.join</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
@@ -234,11 +216,11 @@
         <div class="source_table" id="1dcb65471431823de692461af2b9fffbef97b6cd">
   <div class="header">
     <h3>lib/enigma.rb</h3>
-    <h4><span class="red">63.01 %</span> covered</h4>
+    <h4><span class="red">72.73 %</span> covered</h4>
     <div>
-      <b>73</b> relevant lines. 
-      <span class="green"><b>46</b> lines covered</span> and
-      <span class="red"><b>27</b> lines missed.</span>
+      <b>66</b> relevant lines. 
+      <span class="green"><b>48</b> lines covered</span> and
+      <span class="red"><b>18</b> lines missed.</span>
     </div>
   </div>
   
@@ -773,70 +755,70 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="89">
           
-          <code class="ruby">  def rotate_letter_decrypt(letter, key, date)</code>
+          
+          <code class="ruby">  # def rotate_letter_decrypt(letter, key, date)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">    if @character_set.include?(letter)</code>
+          <code class="ruby">  #   if @character_set.include?(letter)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">      final_index =  @character_set.index(letter) - @shifts[0]</code>
+          <code class="ruby">  #     final_index =  @character_set.index(letter) - @shifts[0]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">      @shifts.rotate!(1)</code>
+          <code class="ruby">  #     @shifts.rotate!(1)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">      letter = @character_set.rotate(final_index).first</code>
+          <code class="ruby">  #     letter = @character_set.rotate(final_index).first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">  #   else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">      @shifts.rotate!(1)</code>
+          <code class="ruby">  #     @shifts.rotate!(1)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
-          <code class="ruby">      letter</code>
+          <code class="ruby">  #     letter</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
@@ -959,8 +941,8 @@
           <code class="ruby">  def decrypt_message(message, key, date)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="120">
-          
+        <li class="covered" data-hits="1" data-linenumber="120">
+          <span class="hits">1</span>
           
           <code class="ruby">    final_shifts(key, date)</code>
         </li>
@@ -971,14 +953,14 @@
           <code class="ruby">    split_message(message, key, date).map do |letter|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="122">
-          
+        <li class="covered" data-hits="5" data-linenumber="122">
+          <span class="hits">5</span>
           
           <code class="ruby">      rotate_letter_decrypt(letter, key, date)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="123">
-          
+        <li class="covered" data-hits="1" data-linenumber="123">
+          <span class="hits">1</span>
           
           <code class="ruby">    end.join</code>
         </li>
