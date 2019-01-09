@@ -68,6 +68,13 @@ class ShifterTest < MiniTest::Test
     assert_equal 5, shifter.offset_d("02715", "040895")
   end
 
+  def test_it_can_find_final_shifts
+    shifter = Shifter.new
+    expected = [3, 27, 73, 20]
+    shifter.final_shifts("02715", "040895")
+
+    assert_equal expected, shifter.shifts
+  end
 
 
 end
