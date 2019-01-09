@@ -34,9 +34,9 @@ class Enigma
   #   end
   # end
 
-  def todays_date
-    Date.today.strftime('%d%m%y').to_i
-  end
+  # def todays_date
+  #   Date.today.strftime('%d%m%y').to_i
+  # end
 
   def date_squared(date)
     date.to_i * date.to_i

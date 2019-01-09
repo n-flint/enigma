@@ -27,6 +27,10 @@ class Shifter < Enigma
     end
   end
 
+  def todays_date
+    Date.today.strftime('%d%m%y').to_i
+  end
+
 
 
 
