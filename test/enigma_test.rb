@@ -58,12 +58,12 @@ class EnigmaTest < MiniTest::Test
   #
   #   assert_equal 90119, enigma.todays_date
   # end
-
-  def test_it_squares_the_date
-    enigma = Enigma.new
-
-    assert_equal 1672401025, enigma.date_squared("040895")
-  end
+  # 
+  # def test_it_squares_the_date
+  #   enigma = Enigma.new
+  #
+  #   assert_equal 1672401025, enigma.date_squared("040895")
+  # end
 
   def test_it_can_find_last_four_of_date_squared
     enigma = Enigma.new

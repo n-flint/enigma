@@ -47,5 +47,12 @@ class ShifterTest < MiniTest::Test
   end
 
 
+  def test_it_squares_the_date
+    shifter = Shifter.new
+
+    assert_equal 1672401025, shifter.date_squared("040895")
+  end
+
+
 
 end
