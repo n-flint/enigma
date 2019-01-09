@@ -1,10 +1,12 @@
 require 'date'
 
 class Enigma
-  attr_reader :character_set
+  attr_reader :character_set,
+              :shifts
 
   def initialize
     @character_set = ("a".."z").to_a << " "
+    @shifts = []
   end
 
   def generate_key
@@ -80,39 +82,63 @@ class Enigma
   end
 
   def final_shifts(key, date)
-    [final_shift_a(key, date), final_shift_b(key, date), final_shift_c(key, date), final_shift_d(key, date)]
+    @shifts = [final_shift_a(key, date), final_shift_b(key, date), final_shift_c(key, date), final_shift_d(key, date)]
+    @shifts
+
   end
 
-  def rotate_shifts(key, date, count)
-    @rotated_shift = final_shifts(key, date).rotate(count)
-  end
+  def rotate_letter_decrypt(letter, key, date)
+    if @character_set.include?(letter)
+      final_index =  @character_set.index(letter) - @shifts[0]
 
-  def rotate_letter(letter, key, date)
-    counter = 0
-    if counter < 4
-      shifts = final_shifts(key, date)
-      final_index = shifts[counter] + @character_set.index(letter)
-      counter += 1
+      @shifts.rotate!(1)
       letter = @character_set.rotate(final_index).first
-      
-      # shifts.rotate(1)
     else
-      counter = 0
+      @shifts.rotate!(1)
+      letter
     end
-    letter
+  end
+
+  def rotate_letter_encrypt(letter, key, date)
+
+      final_index = @shifts[0] + @character_set.index(letter)
+      @shifts.rotate!(1)
+      letter = @character_set.rotate(final_index).first
   end
 
   def split_message(message, key, date)
     message.split(//)
   end
 
-  def encrypt(message, key = pad_key, date = todays_date)
+  def encrypt_message(message, key, date)
+    final_shifts(key, date)
     split_message(message, key, date).map do |letter|
-
-      rotate_letter(letter, key, date)
+      rotate_letter_encrypt(letter, key, date)
     end.join
   end
 
+  def decrypt_message(message, key, date)
+    final_shifts(key, date)
+    split_message(message, key, date).map do |letter|
+      rotate_letter_decrypt(letter, key, date)
+    end.join
+  end
 
+  def encrypt(message, key = pad_key, date = todays_date)
+    final = Hash.new
+    message = encrypt_message(message, key, date)
+    final[:encryption] = message
+    final[:key] = key
+    final[:date] = date
+    final
+  end
 
+  def decrypt(message, key = pad_key, date = todays_date)
+    final = Hash.new
+    message = decrypt_message(message, key, date)
+    final[:decryption] = message
+    final[:key] = key
+    final[:date] = date
+    final
+  end
 end
