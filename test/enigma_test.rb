@@ -39,12 +39,12 @@ class EnigmaTest < MiniTest::Test
   #   assert_equal 5, enigma.pad_key.length
   # end
 
-  def test_it_can_generate_key_pairs
-    enigma = Enigma.new
-    enigma.pad_key
-
-    assert_equal 5, enigma.key_pairs("02715").count
-  end
+  # def test_it_can_generate_key_pairs
+  #   enigma = Enigma.new
+  #   enigma.pad_key
+  #
+  #   assert_equal 5, enigma.key_pairs("02715").count
+  # end
 
   def test_it_can_combine_key_pairs
     enigma = Enigma.new

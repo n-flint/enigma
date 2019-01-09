@@ -33,6 +33,13 @@ class ShifterTest < MiniTest::Test
     assert_equal 5, shifter.key_pairs("02715").count
   end
 
+  def test_it_can_combine_key_pairs
+    shifter = Shifter.new
+    shifter.key_pairs("02715")
+
+    assert_equal 4, shifter.combine_pairs("02715").count
+  end
+
 
 
 end
