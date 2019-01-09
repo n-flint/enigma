@@ -80,6 +80,20 @@ class EnigmaTest < MiniTest::Test
     assert_equal 1, enigma.offset_d
   end
 
+  #testing the value of the shifts?
+  def test_it_can_find_final_shifts
+    enigma = Enigma.new
+
+    assert_equal 4, enigma.final_shifts.count
+  end
+
+
+  #
+  # def test_it_can_get_array_of_final_shifts
+  #   shifter = Shifter.new
+  #
+  #   assert_equal [6, 28, 77, 16], shifter.final_shifts
+  # end
 
 
   # def test_it_can_get_final_shifts

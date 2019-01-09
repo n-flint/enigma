@@ -27,7 +27,6 @@ class Enigma
 
   def combine_pairs
     key_pairs.each_cons(2).to_a
-
   end
 
   def todays_date
@@ -58,6 +57,26 @@ class Enigma
 
   def offset_d
     date_last_four[3].to_i
+  end
+
+  def final_shift_a
+    offset_a + key_pairs[0]
+  end
+
+  def final_shift_b
+    offset_b + key_pairs[1]
+  end
+
+  def final_shift_c
+    offset_c + key_pairs[2]
+  end
+
+  def final_shift_d
+    offset_d + key_pairs[3]
+  end
+
+  def final_shifts
+    [final_shift_a, final_shift_b, final_shift_c, final_shift_d]
   end
 
 end
