@@ -20,6 +20,14 @@ class Shifter < Enigma
     end
   end
 
+  def combine_pairs(key)
+    pairs = key_pairs(key).each_cons(2).to_a
+    pairs.map do |pair|
+      pair.join.to_i
+    end
+  end
+
+
 
 
 

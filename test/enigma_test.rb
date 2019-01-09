@@ -46,12 +46,12 @@ class EnigmaTest < MiniTest::Test
   #   assert_equal 5, enigma.key_pairs("02715").count
   # end
 
-  def test_it_can_combine_key_pairs
-    enigma = Enigma.new
-    enigma.key_pairs("02715")
-
-    assert_equal 4, enigma.combine_pairs("02715").count
-  end
+  # def test_it_can_combine_key_pairs
+  #   enigma = Enigma.new
+  #   enigma.key_pairs("02715")
+  #
+  #   assert_equal 4, enigma.combine_pairs("02715").count
+  # end
 
   def test_it_can_find_todays_date
     enigma = Enigma.new
