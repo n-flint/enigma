@@ -33,11 +33,11 @@ class EnigmaTest < MiniTest::Test
   #   assert_instance_of Integer, enigma.generate_key
   # end
 
-  def test_it_generates_five_digits
-    enigma = Enigma.new
-
-    assert_equal 5, enigma.pad_key.length
-  end
+  # def test_it_generates_five_digits
+  #   enigma = Enigma.new
+  #
+  #   assert_equal 5, enigma.pad_key.length
+  # end
 
   def test_it_can_generate_key_pairs
     enigma = Enigma.new

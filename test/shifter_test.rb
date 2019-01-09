@@ -20,7 +20,7 @@ class ShifterTest < MiniTest::Test
     assert_equal true, actual
   end
 
-  def test_it_can_pad_key
+  def test_it_returns_five_digits_with_pad_key
     shifter = Shifter.new
 
     assert_equal 5, shifter.pad_key.length
