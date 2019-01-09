@@ -5,23 +5,19 @@ require './lib/shifter'
 require './lib/keys'
 require './lib/offsets'
 
-
-
 class Enigma
   include Encrypter,
           Decrypter,
           Shifter
   attr_reader :character_set,
-              :shifts
+              :shifts,
+              :keys
 
   def initialize
     @character_set = ("a".."z").to_a << " "
     @shifts = []
     @keys = Keys.new
     @offsets = Offsets.new
-
-    # @encrypter = Encrypter.new
-    # @encrypter = Encrypter.new
   end
 
   def split_message(message, key, date)
@@ -29,7 +25,6 @@ class Enigma
   end
 
   def encrypt(message, key = pad_key, date = todays_date)
-    # encrypter = Encrypter.new
     final = Hash.new
     message = encrypt_message(message, key, date)
     final[:encryption] = message
@@ -44,6 +39,7 @@ class Enigma
     final[:decryption] = message
     final[:key] = key
     final[:date] = date
+  
     final
   end
 end

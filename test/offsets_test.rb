@@ -39,5 +39,4 @@ class OffsetsTest < MiniTest::Test
     assert_equal 2, offsets.offset_c("040895")
     assert_equal 5, offsets.offset_d("040895")
   end
-
 end

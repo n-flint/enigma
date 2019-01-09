@@ -52,6 +52,7 @@ class EnigmaTest < MiniTest::Test
       :date => "040895"
     }
     actual = enigma.decrypt("keder ohulw", "02715", "040895")
+    
     assert_equal expected, actual
   end
 end
