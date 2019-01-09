@@ -28,13 +28,13 @@ module Shifter
     end
   end
 
-  def todays_date
-    Date.today.strftime('%d%m%y').to_i
-  end
+  # def todays_date
+  #   Date.today.strftime('%d%m%y').to_i
+  # end
 
-  def date_squared(date)
-    date.to_i * date.to_i
-  end
+  # def date_squared(date)
+  #   date.to_i * date.to_i
+  # end
 
   def date_last_four(date)
     date_squared(date).to_s[-4..-1].split(//).map do |num|
