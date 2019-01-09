@@ -49,7 +49,6 @@ class Enigma
   end
 
   def offset_a(key, date)
-
     date_last_four(date)[0].to_i
   end
 
