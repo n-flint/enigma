@@ -24,7 +24,7 @@ class Enigma
     message.split(//)
   end
 
-  def encrypt(message, key = pad_key, date = todays_date)
+  def encrypt(message, key = @keys.pad_key, date = @offsets.todays_date)
     final = Hash.new
     message = encrypt_message(message, key, date)
     final[:encryption] = message
