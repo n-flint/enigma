@@ -1,6 +1,7 @@
-require './lib/enigma'
-
-class Decrypter < Enigma
+# require './lib/enigma'
+#
+# class Decrypter < Enigma
+module Decrypter
 
   def rotate_letter_decrypt(letter, key, date)
     if @character_set.include?(letter)
