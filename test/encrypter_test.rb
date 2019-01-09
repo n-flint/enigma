@@ -13,6 +13,13 @@ class EncrypterTest < MiniTest::Test
     assert_instance_of Encrypter, encrypter
   end
 
+  def test_it_can_rotate_a_letter_encrypt
+    encrypter = Encrypter.new
+    encrypter.final_shifts("02715", "040895")
+
+    assert_equal "k", encrypter.rotate_letter_encrypt("h", "02715", "040895")
+  end
+
   def test_it_encrypts_messages
     # enigma = Enigma.new
     encrypter = Encrypter.new
