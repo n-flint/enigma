@@ -1,12 +1,15 @@
-require './lib/enigma'
-
-# class Encrypter < Enigma
 module Encrypter
 
   def rotate_letter_encrypt(letter, key, date)
-      final_index = @shifts[0] + @character_set.index(letter)
+    if @character_set.include?(letter)
+      final_index =  @character_set.index(letter) + @shifts[0]
+
       @shifts.rotate!(1)
       letter = @character_set.rotate(final_index).first
+    else
+      @shifts.rotate!(1)
+      letter
+    end
   end
 
   def encrypt_message(message, key, date)

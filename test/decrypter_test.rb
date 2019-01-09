@@ -7,23 +7,70 @@ require './lib/decrypter'
 
 class DecrypterTest < MiniTest::Test
 
-  def test_it_exists
-    decrypter = Decrypter.new
-
-    assert_instance_of Decrypter, decrypter
-  end
-
   def test_it_can_rotate_a_letter_decrypt
-    decrypter = Decrypter.new
-    decrypter.final_shifts("02715", "040895")
+    enigma = Enigma.new
 
-    assert_equal "h", decrypter.rotate_letter_decrypt("k", "02715", "040895")
+    enigma.final_shifts("02715", "040895")
+
+    assert_equal "h", enigma.rotate_letter_decrypt("k", "02715", "040895")
+    assert_equal "!", enigma.rotate_letter_decrypt("!", "02715", "040895")
   end
 
   def test_it_decrypts_messages
-    decrypter = Decrypter.new
+    enigma = Enigma.new
 
     expected = "hello"
-    assert_equal expected, decrypter.decrypt_message("keder", "02715", "040895")
+    assert_equal expected, enigma.decrypt_message("keder", "02715", "040895")
+  end
+
+  def test_it_can_generate_a_random_key
+    keys = Keys.new
+    actual = keys.generate_key.is_a? Integer
+
+    assert_equal true, actual
+  end
+
+  def test_it_returns_five_digits_with_pad_key
+    keys = Keys.new
+
+    assert_equal 5, keys.pad_key.length
+  end
+
+  def test_it_correctly_decrypts_message
+    enigma = Enigma.new
+    expected = {
+      :decryption => "hello world",
+      :key => "02715",
+      :date => "040895"
+    }
+    actual = enigma.decrypt("keder ohulw", "02715", "040895")
+
+    assert_equal expected, actual
+  end
+
+  def test_it_correctly_encrypts_message
+    enigma = Enigma.new
+    expected = {
+      :encryption => "keder ohulw",
+      :key => "02715",
+      :date => "040895"
+    }
+    actual = enigma.encrypt("hello world", "02715", "040895")
+
+    assert_equal expected, actual
+  end
+
+  def test_it_can_find_todays_date
+    offsets = Offsets.new
+
+    assert_equal 90119, offsets.todays_date
+  end
+
+  def test_it_can_rotate_a_letter_encrypt
+    enigma = Enigma.new
+    enigma.final_shifts("02715", "040895")
+
+    assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
+    assert_equal "!", enigma.rotate_letter_encrypt("!", "02715", "040895")
   end
 end

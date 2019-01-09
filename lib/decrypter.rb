@@ -1,6 +1,3 @@
-# require './lib/enigma'
-#
-# class Decrypter < Enigma
 module Decrypter
 
   def rotate_letter_decrypt(letter, key, date)

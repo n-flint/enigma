@@ -1,7 +1,5 @@
-# require './lib/shifter'
-
 class Offsets
-  # include Shifter
+
   def todays_date
     Date.today.strftime('%d%m%y').to_i
   end
