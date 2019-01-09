@@ -40,6 +40,12 @@ class ShifterTest < MiniTest::Test
     assert_equal 4, shifter.combine_pairs("02715").count
   end
 
+  def test_it_can_find_todays_date
+    shifter = Shifter.new
+
+    assert_equal 90119, shifter.todays_date
+  end
+
 
 
 end

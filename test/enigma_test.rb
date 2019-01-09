@@ -53,11 +53,11 @@ class EnigmaTest < MiniTest::Test
   #   assert_equal 4, enigma.combine_pairs("02715").count
   # end
 
-  def test_it_can_find_todays_date
-    enigma = Enigma.new
-
-    assert_equal 90119, enigma.todays_date
-  end
+  # def test_it_can_find_todays_date
+  #   enigma = Enigma.new
+  #
+  #   assert_equal 90119, enigma.todays_date
+  # end
 
   def test_it_squares_the_date
     enigma = Enigma.new
