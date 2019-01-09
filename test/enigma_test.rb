@@ -88,10 +88,10 @@ class EnigmaTest < MiniTest::Test
   end
 
   def test_it_can_rotate_a_letter
-    skip
+    #skip
     enigma = Enigma.new
 
-    assert_equal "k", enigma.rotate_letter("h")
+    assert_equal "k", enigma.rotate_letter("h", "02715", "040895")
   end
 
   def test_it_can_split_up_message
@@ -104,10 +104,11 @@ class EnigmaTest < MiniTest::Test
   def test_it_can_rotate_shifts
     enigma = Enigma.new
 
-    assert_equal [27, 73, 20, 3], enigma.rotate_shifts
+    assert_equal [27, 73, 20, 3], enigma.rotate_shifts("02715", "040895", 1)
   end
 
   def test_it_encrypts_messages
+    skip
     enigma = Enigma.new
 
     expected = "keder"

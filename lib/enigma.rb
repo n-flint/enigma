@@ -83,15 +83,18 @@ class Enigma
     [final_shift_a(key, date), final_shift_b(key, date), final_shift_c(key, date), final_shift_d(key, date)]
   end
 
+  def rotate_shifts(key, date, count)
+    @rotated_shift = final_shifts(key, date).rotate(count)
+  end
+
   def rotate_letter(letter, key, date)
     counter = 0
-    require "pry"
-    binding.pry
     if counter < 4
       shifts = final_shifts(key, date)
       final_index = shifts[counter] + @character_set.index(letter)
       counter += 1
       letter = @character_set.rotate(final_index).first
+      
       # shifts.rotate(1)
     else
       counter = 0
