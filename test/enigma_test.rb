@@ -43,14 +43,14 @@ class EnigmaTest < MiniTest::Test
     enigma = Enigma.new
     enigma.pad_key
 
-    assert_equal 5, enigma.key_pairs.count
+    assert_equal 5, enigma.key_pairs("02715").count
   end
 
   def test_it_can_combine_key_pairs
     enigma = Enigma.new
-    enigma.key_pairs
+    enigma.key_pairs("02715")
 
-    assert_equal 4, enigma.combine_pairs.count
+    assert_equal 4, enigma.combine_pairs("02715").count
   end
 
   def test_it_can_find_todays_date
@@ -62,29 +62,50 @@ class EnigmaTest < MiniTest::Test
   def test_it_squares_the_date
     enigma = Enigma.new
 
-    assert_equal 6419054161, enigma.date_squared
+    assert_equal 1672401025, enigma.date_squared("040895")
   end
 
   def test_it_can_find_last_four_of_date_squared
     enigma = Enigma.new
 
-    assert_equal [4, 1, 6, 1], enigma.date_last_four
+    assert_equal [1, 0, 2, 5], enigma.date_last_four("040895")
   end
 
   def test_it_can_generate_offsets
     enigma = Enigma.new
 
-    assert_equal 4, enigma.offset_a
-    assert_equal 1, enigma.offset_b
-    assert_equal 6, enigma.offset_c
-    assert_equal 1, enigma.offset_d
+    assert_equal 1, enigma.offset_a("02715", "040895")
+    assert_equal 0, enigma.offset_b("02715", "040895")
+    assert_equal 2, enigma.offset_c("02715", "040895")
+    assert_equal 5, enigma.offset_d("02715", "040895")
   end
 
   #testing the value of the shifts?
   def test_it_can_find_final_shifts
     enigma = Enigma.new
 
-    assert_equal 4, enigma.final_shifts.count
+    assert_equal 4, enigma.final_shifts("02715", "040895").count
+  end
+
+  def test_it_can_rotate_a_letter
+    skip
+    enigma = Enigma.new
+
+    assert_equal "k", enigma.rotate_letter("h")
+  end
+
+  def test_it_can_split_up_message
+    enigma = Enigma.new
+
+    expected = ["h", "e", "l", "l", "o"]
+    assert_equal expected, enigma.split_message("hello", "02715", "040895")
+  end
+
+  def test_it_encrypts_messages
+    enigma = Enigma.new
+
+    expected = "keder"
+    assert_equal expected, enigma.encrypt("hello", "02715", "040895")
   end
 
 
@@ -102,5 +123,5 @@ class EnigmaTest < MiniTest::Test
   #   assert_equal expected, actual
   # end
   #
-  
+
 end
