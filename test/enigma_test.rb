@@ -89,12 +89,12 @@ class EnigmaTest < MiniTest::Test
     assert_equal expected, enigma.shifts
   end
 
-  def test_it_can_rotate_a_letter_encrypt
-    enigma = Enigma.new
-    enigma.final_shifts("02715", "040895")
-
-    assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
-  end
+  # def test_it_can_rotate_a_letter_encrypt
+  #   enigma = Enigma.new
+  #   enigma.final_shifts("02715", "040895")
+  #
+  #   assert_equal "k", enigma.rotate_letter_encrypt("h", "02715", "040895")
+  # end
 
   def test_it_can_rotate_a_letter_decrypt
     enigma = Enigma.new
@@ -116,18 +116,12 @@ class EnigmaTest < MiniTest::Test
     assert_equal [], enigma.shifts
   end
 
-  def test_it_starts_with_empty_array
-    enigma = Enigma.new
-
-    assert_equal [], enigma.shifts
-  end
-
-  def test_it_encrypts_messages
-    enigma = Enigma.new
-
-    expected = "keder"
-    assert_equal expected, enigma.encrypt_message("hello", "02715", "040895")
-  end
+  # def test_it_encrypts_messages
+  #   enigma = Enigma.new
+  #
+  #   expected = "keder"
+  #   assert_equal expected, enigma.encrypt_message("hello", "02715", "040895")
+  # end
 
   def test_it_correctly_encrypts_message
     enigma = Enigma.new

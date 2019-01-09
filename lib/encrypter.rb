@@ -1,22 +1,21 @@
-require './lib/shifter'
 require './lib/enigma'
 
+class Encrypter < Enigma
 
-class Encrypter
-  attr_reader :shifter,
-              :character_set
+  def rotate_letter_encrypt(letter, key, date)
 
-  def initialize
-    @character_set = ("a".."z").to_a << " "
+      final_index = @shifts[0] + @character_set.index(letter)
+      @shifts.rotate!(1)
+      letter = @character_set.rotate(final_index).first
   end
 
-  def encrypt(message, key, date)
-    @shifter = Shifter.new(date, key)
-    # shift_values = @shifter.final_shifts
-    # require "pry"
-    # binding.pry
-    letters = message.downcase.chars
+  def encrypt_message(message, key, date)
+    final_shifts(key, date)
+    split_message(message, key, date).map do |letter|
+      rotate_letter_encrypt(letter, key, date)
+    end.join
   end
+
 
 
 end

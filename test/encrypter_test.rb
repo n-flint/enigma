@@ -3,7 +3,6 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/enigma'
-require './lib/shifter'
 require './lib/encrypter'
 
 class EncrypterTest < MiniTest::Test
@@ -14,39 +13,18 @@ class EncrypterTest < MiniTest::Test
     assert_instance_of Encrypter, encrypter
   end
 
-  def test_it_can_get_character_set
+  def test_it_can_rotate_a_letter_encrypt
     encrypter = Encrypter.new
+    encrypter.final_shifts("02715", "040895")
 
-    expected = ("a".."z").to_a << " "
-
-    assert_equal expected, encrypter.character_set
+    assert_equal "k", encrypter.rotate_letter_encrypt("h", "02715", "040895")
   end
 
-  def test_it_can_get_final_shifts
+  def test_it_encrypts_messages
+    # enigma = Enigma.new
     encrypter = Encrypter.new
 
-    assert_equal [3, 27, 73, 20], encrypter.shift_values
-  end
-
-  # def test_it_can_get_final_shifts
-  #   encrypter = Encrypter.new
-  #
-  #   assert_equal 6, encrypter.shifter.final_shift_a
-  #   assert_equal 28, encrypter.shifter.final_shift_b
-  #   assert_equal 77, encrypter.shifter.final_shift_c
-  #   assert_equal 16, encrypter.shifter.final_shift_d
-  # end
-
-  def test_it_correctly_encrypts_message
-    #skip
-    encrypter = Encrypter.new
-    expected = {
-      :encryption => "keder ohulw",
-      :key => "02715",
-      :date => "040895"
-    }
-    actual = encrypter.encrypt("hello world", "02715", "040895")
-
-    assert_equal expected, actual
+    expected = "keder"
+    assert_equal expected, encrypter.encrypt_message("hello", "02715", "040895")
   end
 end
