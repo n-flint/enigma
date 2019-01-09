@@ -39,7 +39,6 @@ class Enigma
     final[:decryption] = message
     final[:key] = key
     final[:date] = date
-  
     final
   end
 end
