@@ -8,7 +8,6 @@ require './lib/encrypter'
 class EncrypterTest < MiniTest::Test
 
   def test_it_can_rotate_a_letter_encrypt
-    # encrypter = Encrypter.new
     enigma = Enigma.new
     enigma.final_shifts("02715", "040895")
 
@@ -17,7 +16,6 @@ class EncrypterTest < MiniTest::Test
 
   def test_it_encrypts_messages
     enigma = Enigma.new
-    # encrypter = Encrypter.new
 
     expected = "keder"
     assert_equal expected, enigma.encrypt_message("hello", "02715", "040895")
