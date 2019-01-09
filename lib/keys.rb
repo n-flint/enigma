@@ -24,8 +24,4 @@ class Keys
       pair.join.to_i
     end
   end
-
-
-
-
 end

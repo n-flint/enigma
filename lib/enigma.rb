@@ -2,6 +2,9 @@ require 'date'
 require './lib/encrypter'
 require './lib/decrypter'
 require './lib/shifter'
+require './lib/keys'
+require './lib/offsets'
+
 
 
 class Enigma
@@ -14,6 +17,8 @@ class Enigma
   def initialize
     @character_set = ("a".."z").to_a << " "
     @shifts = []
+    @keys = Keys.new
+    @offsets = Offsets.new
     # @encrypter = Encrypter.new
   end
 

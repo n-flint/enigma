@@ -45,7 +45,6 @@ class EnigmaTest < MiniTest::Test
   end
 
   def test_it_correctly_decrypts_message
-    #skip
     enigma = Enigma.new
     expected = {
       :decryption => "hello world",
