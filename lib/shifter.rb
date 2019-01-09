@@ -10,6 +10,11 @@ class Shifter < Enigma
     key.join.to_i
   end
 
+  def pad_key
+    generate_key.to_s.rjust(5, "0")
+  end
+
+
 
 
 end
