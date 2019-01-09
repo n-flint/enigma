@@ -71,11 +71,14 @@ class EnigmaTest < MiniTest::Test
     assert_equal [4, 1, 6, 1], enigma.date_last_four
   end
 
-  # def test_it_can_generate_offsets
-  #   enigma = Enigma.new
-  #
-  #
-  # end
+  def test_it_can_generate_offsets
+    enigma = Enigma.new
+
+    assert_equal 4, offset_a
+    assert_equal 1, offset_b
+    assert_equal 6, offset_c
+    assert_equal 1, offset_d
+  end
 
 
 
