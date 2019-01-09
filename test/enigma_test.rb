@@ -27,11 +27,11 @@ class EnigmaTest < MiniTest::Test
     assert_equal expected, enigma.character_set
   end
 
-  def test_it_can_make_random_key
-    enigma = Enigma.new
-
-    assert_instance_of Integer, enigma.generate_key
-  end
+  # def test_it_can_make_random_key
+  #   enigma = Enigma.new
+  #
+  #   assert_instance_of Integer, enigma.generate_key
+  # end
 
   def test_it_generates_five_digits
     enigma = Enigma.new
