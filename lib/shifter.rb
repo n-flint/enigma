@@ -57,6 +57,27 @@ class Shifter < Enigma
     date_last_four(date)[3].to_i
   end
 
+  def final_shift_a(key, date)
+    offset_a(key, date) + combine_pairs(key)[0]
+  end
+
+  def final_shift_b(key, date)
+    offset_b(key, date) + combine_pairs(key)[1]
+  end
+
+  def final_shift_c(key, date)
+    offset_c(key, date) + combine_pairs(key)[2]
+  end
+
+  def final_shift_d(key, date)
+    offset_d(key, date) + combine_pairs(key)[3]
+  end
+
+  def final_shifts(key, date)
+    @shifts = [final_shift_a(key, date), final_shift_b(key, date), final_shift_c(key, date), final_shift_d(key, date)]
+    # @shifts
+  end
+
 
 
 
