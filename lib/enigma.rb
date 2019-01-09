@@ -21,11 +21,11 @@ class Enigma
   #   generate_key.to_s.rjust(5, "0")
   # end
 
-  def key_pairs(key)
-    key.split(//).map do |key|
-    key.to_i
-    end
-  end
+  # def key_pairs(key)
+  #   key.split(//).map do |key|
+  #   key.to_i
+  #   end
+  # end
 
   def combine_pairs(key)
     pairs = key_pairs(key).each_cons(2).to_a
