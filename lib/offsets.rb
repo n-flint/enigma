@@ -1,6 +1,9 @@
 
 class Offsets
 
+  def todays_date
+    Date.today.strftime('%d%m%y').to_i
+  end
   # def offset_a(key, date)
   #   date_last_four(date)[0].to_i
   # end
