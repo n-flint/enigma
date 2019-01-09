@@ -3,13 +3,13 @@
 # class Shifter < Enigma
 module Shifter
 
-  def generate_key
-    key = []
-    5.times do
-      key << rand(0..9)
-    end
-    key.join.to_i
-  end
+  # def generate_key
+  #   key = []
+  #   5.times do
+  #     key << rand(0..9)
+  #   end
+  #   key.join.to_i
+  # end
 
   def pad_key
     generate_key.to_s.rjust(5, "0")
