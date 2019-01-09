@@ -26,6 +26,13 @@ class ShifterTest < MiniTest::Test
     assert_equal 5, shifter.pad_key.length
   end
 
+  def test_it_can_generate_key_pairs
+    shifter = Shifter.new
+    shifter.pad_key
+
+    assert_equal 5, shifter.key_pairs("02715").count
+  end
+
 
 
 end
