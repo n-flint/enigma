@@ -34,10 +34,10 @@ class OffsetsTest < MiniTest::Test
   def test_it_can_generate_offsets
     offsets = Offsets.new
 
-    assert_equal 1, offsets.offset_a("02715", "040895")
-    assert_equal 0, offsets.offset_b("02715", "040895")
-    assert_equal 2, offsets.offset_c("02715", "040895")
-    assert_equal 5, offsets.offset_d("02715", "040895")
+    assert_equal 1, offsets.offset_a("040895")
+    assert_equal 0, offsets.offset_b("040895")
+    assert_equal 2, offsets.offset_c("040895")
+    assert_equal 5, offsets.offset_d("040895")
   end
 
 end

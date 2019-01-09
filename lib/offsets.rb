@@ -1,4 +1,3 @@
-
 class Offsets
 
   def todays_date
@@ -15,22 +14,19 @@ class Offsets
     end
   end
 
-
-  def offset_a(key, date)
+  def offset_a(date)
     date_last_four(date)[0].to_i
   end
 
-  def offset_b(key, date)
+  def offset_b(date)
     date_last_four(date)[1].to_i
   end
 
-  def offset_c(key, date)
+  def offset_c(date)
     date_last_four(date)[2].to_i
   end
 
-  def offset_d(key, date)
+  def offset_d(date)
     date_last_four(date)[3].to_i
   end
-
-
 end
