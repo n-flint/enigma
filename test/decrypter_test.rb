@@ -5,7 +5,7 @@ require 'minitest/pride'
 require './lib/enigma'
 require './lib/decrypter'
 
-class EncrypterTest < MiniTest::Test
+class DecrypterTest < MiniTest::Test
 
   def test_it_exists
     decrypter = Decrypter.new

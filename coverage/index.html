@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:01:36-07:00">2019-01-09T10:01:36-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-09T10:02:34-07:00">2019-01-09T10:02:34-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">34.25%</span></span>
+    (<span class="covered_percent"><span class="red">38.67%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.3
+         0.42
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>73</b> relevant lines. 
-    <span class="green"><b>25</b> lines covered</span> and
-    <span class="red"><b>48</b> lines missed </span>
+    <b>75</b> relevant lines. 
+    <span class="green"><b>29</b> lines covered</span> and
+    <span class="red"><b>46</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -53,21 +53,21 @@
       <tr>
         <td class="strong"><a href="#39137df52fc19d77888655c9a851d8397e99808e" class="src_link" title="lib/decrypter.rb">lib/decrypter.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1dcb65471431823de692461af2b9fffbef97b6cd" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
-        <td class="red strong">34.25 %</td>
+        <td class="red strong">36.99 %</td>
         <td>143</td>
         <td>73</td>
-        <td>25</td>
-        <td>48</td>
-        <td>0.3</td>
+        <td>27</td>
+        <td>46</td>
+        <td>0.4</td>
       </tr>
       
     </tbody>
@@ -91,14 +91,62 @@
     <h3>lib/decrypter.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>0</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;./lib/enigma&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Decrypter &lt; Enigma</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
       
     </ol>
   </pre>
@@ -108,11 +156,11 @@
         <div class="source_table" id="1dcb65471431823de692461af2b9fffbef97b6cd">
   <div class="header">
     <h3>lib/enigma.rb</h3>
-    <h4><span class="red">34.25 %</span> covered</h4>
+    <h4><span class="red">36.99 %</span> covered</h4>
     <div>
       <b>73</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
-      <span class="red"><b>48</b> lines missed.</span>
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>46</b> lines missed.</span>
     </div>
   </div>
   
@@ -161,14 +209,14 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">    @character_set = (&quot;a&quot;..&quot;z&quot;).to_a &lt;&lt; &quot; &quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">    @shifts = []</code>
         </li>

@@ -9,8 +9,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -147,9 +147,16 @@
         null
       ],
       "/Users/noahflint/turing/1module/projects/enigma/lib/decrypter.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1547053296
+    "timestamp": 1547053354
   }
 }
